@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import ReactApexChart from 'react-apexcharts';
-// import 'antd/dist/antd.css';
-import moment from 'moment';
-import AppServiceNav from "./appServiceNav";
-function ByteSend() {
+// import moment from 'moment';
+import Nav from "./nav";
+function AvgRespTime() {
 
     const [valu, getvalu] = useState([]);
     const [TimeGenerated, gettime] = useState([]);
 
     useEffect(() => {
-        fetch('https://jacksonsuthip.github.io/nxtJS/url/BytesSent.json')
+        fetch('https://jacksonsuthip.github.io/nxtJS/url/AverageResponseTime.json')
             .then((res) => res.json())
             .then((data) => {
-                var cpuPerf = data.map((cpuPerfVal, i) =>
-                    cpuPerfVal.avg
+                var memAvg = data.map((memAvgVal, i) =>
+                    memAvgVal.avg
                 )
-                getvalu(cpuPerf)
+                getvalu(memAvg)
                 var time = data.map((timeData, i) =>
                     timeData.TimeGenerated
                 )
@@ -26,11 +25,11 @@ function ByteSend() {
 
     return (
         <div className="App">
-            <AppServiceNav />
+            <Nav />
             <div>
                 <div style={{ fontSize: '20px', fontWeight: 'bold', background: '#f1f1f1' }} >
                     <p style={{ paddingTop: '2px' }}></p>
-                    <span style={{ paddingLeft: '15px' }}>CPU Performance</span>
+                    <span style={{ paddingLeft: '15px' }}>Average Response Time</span>
                     <span style={{ paddingLeft: '10px' }}></span>
                     <span style={{ paddingLeft: '10px' }}></span>
                     <div
@@ -43,7 +42,7 @@ function ByteSend() {
                     >
 
             <ReactApexChart
-                type="line"
+                type="bar"
                 width={800}
                 height={400}
                 series={[
@@ -53,7 +52,6 @@ function ByteSend() {
                     }
                 ]}
                 options={{
-                    colors:['blueviolet'],
                     xaxis: {
                         tickPlacement: 'on',
                         categories: TimeGenerated,
@@ -68,21 +66,21 @@ function ByteSend() {
 
                             show: true,
 
-                            rotate: -45,
+                            // rotate: -45,
 
-                            rotateAlways: true,
+                            // rotateAlways: true,
 
                             hideOverlappingLabels: true,
 
-                            formatter: function (value, tempDate, index) {
+                            // formatter: function (value, tempDate, index) {
 
-                                return moment.utc(value).format('DD MMM YY');
+                            //     return moment.utc(value).format('DD MMM YY');
 
-                            }
+                            // }
 
-                        }
+                        },
                         
-                      
+                       
                     },
                     yaxis: {
 
@@ -98,11 +96,9 @@ function ByteSend() {
                     plotOptions:{
                         bar:{
                             borderRadius:10,
-                            columnWidth: '30%',
                             dataLabels:{
                                 //within the chart alignment
-                                orientation:"vertical",
-                                
+                                orientation:"vertical"
                             }
                         }
                       }
@@ -114,4 +110,4 @@ function ByteSend() {
         </div>
     );
 }
-export default ByteSend;
+export default AvgRespTime;

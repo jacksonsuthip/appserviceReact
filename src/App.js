@@ -1,5 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import AvgRespTime from './AvgRespTime';
 import ByteSend from './ByteSend';
 import ByteReceive from './BytesReceived';
 import Count from './Count';
@@ -17,6 +18,7 @@ function App() {
           <Route path='/average' element={<Count />} />
           <Route path='/RequestInformation' element={<ReqInfn />} />
           <Route path='/memory' element={<MemoryWorking />} />
+          <Route path='/avgRespTime' element={<AvgRespTime />} />
 
           <Route path='/cpuperformance' element={<Cpuperformance />} />
           <Route path='/memoryPercentage' element={<MemoryPercentage />} />

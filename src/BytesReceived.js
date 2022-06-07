@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ReactApexChart from 'react-apexcharts';
-// import 'antd/dist/antd.css';
-// import moment from 'moment';
 import AppServiceNav from "./appServiceNav";
+import moment from 'moment';
+
 function ByteReceive() {
 
     const [valu, getvalu] = useState([]);
@@ -74,11 +74,11 @@ function ByteReceive() {
 
                             hideOverlappingLabels: true,
 
-                            // formatter: function (value, tempDate, index) {
+                            formatter: function (value, tempDate, index) {
 
-                            //     return moment.utc(value).format('DD MMM YY');
+                                return moment.utc(value).format('DD MMM YY');
 
-                            // }
+                            }
 
                         }
                         

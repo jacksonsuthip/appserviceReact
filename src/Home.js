@@ -26,8 +26,10 @@ function Home() {
                 </ul>
             </header>
             <div className='s1'>
-                <div ></div>
-                <img src={cloud1} style={{ height: '100%', width: '100' }} alt="logo" />
+                <div></div>
+                <div style={{ marginLeft: '270px' }}>
+                    <img src={cloud1} style={{ height: '100%', width: '100' }} alt="logo" />
+                </div>
             </div>
             {/* <Row>
                     <Col span={5}></Col>

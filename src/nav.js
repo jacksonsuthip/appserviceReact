@@ -5,8 +5,8 @@ function Nav() {
     const menuItems = [
         { key: "average", displayName: "CPU Time", isDefaut: true },
         { key: "memory", displayName: "Memory Working Set", isDefaut: false },
-        // { key: "avgRespTime", displayName: "Average Response Time", isDefaut: false },
-        // { key: "RequestInformation", displayName: "Request Information", isDefaut: false },
+        { key: "avgRespTime", displayName: "Average Response Time", isDefaut: false },
+        { key: "RequestInformation", displayName: "Request Information", isDefaut: false },
         { key: "home", displayName: "Home", isDefaut: false }
     ];
 
