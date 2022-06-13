@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ReactApexChart from 'react-apexcharts';
+import AppServiceNav from "./appServiceNav";
 // import 'antd/dist/antd.css';
 // import moment from 'moment';
-import AppServiceNav from "./appServiceNav";
 function Cpuperformance() {
 
     const [valu, getvalu] = useState([]);

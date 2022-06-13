@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css'
-function Nav() {
+import '../App.css'
+function AppServiceNav() {
     const menuItems = [
-        { key: "average", displayName: "CPU Time", isDefaut: true },
-        { key: "memory", displayName: "Memory Working Set", isDefaut: false },
-        { key: "avgRespTime", displayName: "Average Response Time", isDefaut: false },
-        { key: "RequestInformation", displayName: "Request Information", isDefaut: false },
+        { key: "cpuperformance", displayName: "CPU Performance", isDefaut: false },
+        { key: "memoryPercentage", displayName: "Memory Percentage", isDefaut: false },
+        { key: "byteSend", displayName: "ByteSend", isDefaut: false },
+        { key: "byteReceive", displayName: "ByteReceive", isDefaut: false },
         { key: "home", displayName: "Home", isDefaut: false }
     ];
 
@@ -26,4 +26,4 @@ function Nav() {
 
     )
 }
-export default Nav;
+export default AppServiceNav;
